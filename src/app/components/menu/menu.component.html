@@ -1,7 +1,7 @@
 <nav>
-  <ul>
-      <li><a routerLink="/">Strona główna</a></li>
-      <li><a routerLink="/movies">Filmy</a></li>
-      <li><a routerLink="/contact">Kontakt</a></li>
+  <ul class="nav">
+    <li class="nav-item"><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="btn-primary" class="btn btn-default mr-1">Strona główna</a></li>
+    <li class="nav-item"><a routerLink="/movies" routerLinkActive="btn-primary" class="btn btn-default mr-1">Filmy</a></li>
+    <li class="nav-item"><a routerLink="/contact" routerLinkActive="btn-primary" class="btn btn-default mr-1">Kontakt</a></li>
   </ul>
 </nav>

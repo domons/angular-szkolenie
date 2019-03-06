@@ -359,7 +359,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-move-list-item\n*ngFor=\"let item of movieList\"\n[movie]=\"item\">\n</app-move-list-item>"
+module.exports = "<div class=\"d-flex flex-wrap justify-content-between\">\n  <app-move-list-item\n  *ngFor=\"let item of movieList\"\n  [movie]=\"item\">\n  </app-move-list-item>\n</div>"
 
 /***/ }),
 

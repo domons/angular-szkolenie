@@ -36,6 +36,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/page-home/page-home.component */ "./src/app/pages/page-home/page-home.component.ts");
 /* harmony import */ var _pages_page_movie_list_page_movie_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/page-movie-list/page-movie-list.component */ "./src/app/pages/page-movie-list/page-movie-list.component.ts");
 /* harmony import */ var _pages_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/page-contact/page-contact.component */ "./src/app/pages/page-contact/page-contact.component.ts");
+/* harmony import */ var _pages_page_notfound_page_notfound_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/page-notfound/page-notfound.component */ "./src/app/pages/page-notfound/page-notfound.component.ts");
+
 
 
 
@@ -51,6 +53,10 @@ var routes = [
     {
         path: 'contact',
         component: _pages_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_2__["PageContactComponent"]
+    },
+    {
+        path: '**',
+        component: _pages_page_notfound_page_notfound_component__WEBPACK_IMPORTED_MODULE_3__["PageNotfoundComponent"]
     }
 ];
 
@@ -116,6 +122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_move_list_move_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/move-list/move-list.component */ "./src/app/components/move-list/move-list.component.ts");
 /* harmony import */ var _components_move_list_item_move_list_item_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/move-list-item/move-list-item.component */ "./src/app/components/move-list-item/move-list-item.component.ts");
 /* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/components/menu/menu.component.ts");
+/* harmony import */ var _pages_page_notfound_page_notfound_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/page-notfound/page-notfound.component */ "./src/app/pages/page-notfound/page-notfound.component.ts");
+
 
 
 
@@ -143,7 +151,8 @@ var AppModule = /** @class */ (function () {
                 _pages_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_8__["PageContactComponent"],
                 _components_move_list_move_list_component__WEBPACK_IMPORTED_MODULE_10__["MoveListComponent"],
                 _components_move_list_item_move_list_item_component__WEBPACK_IMPORTED_MODULE_11__["MoveListItemComponent"],
-                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_12__["MenuComponent"]
+                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_12__["MenuComponent"],
+                _pages_page_notfound_page_notfound_component__WEBPACK_IMPORTED_MODULE_13__["PageNotfoundComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -289,7 +298,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  move-list-item works!\n</p>\n"
+module.exports = "<div class=\"card\" style=\"width: 18rem;\">\n    <img [src]=\"movie.image\" class=\"card-img-top\" alt=\"...\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{ movie?.title }}</h5>\n      <p class=\"card-text\">{{ movie?.description }}</p>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -309,9 +318,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var MoveListItemComponent = /** @class */ (function () {
     function MoveListItemComponent() {
+        this.movie = null;
     }
     MoveListItemComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], MoveListItemComponent.prototype, "movie", void 0);
     MoveListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-move-list-item',
@@ -345,7 +359,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  move-list works!\n</p>\n"
+module.exports = "<app-move-list-item\n*ngFor=\"let item of movieList\"\n[movie]=\"item\">\n</app-move-list-item>"
 
 /***/ }),
 
@@ -365,6 +379,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var MoveListComponent = /** @class */ (function () {
     function MoveListComponent() {
+        this.movieList = [
+            {
+                title: 'Film #1',
+                description: 'Lorem ipsum 1',
+                image: 'https://avatars0.githubusercontent.com/u/10672914?s=460&v=4',
+            },
+            {
+                title: 'Film #2',
+                description: 'Lorem ipsum 2',
+                image: 'https://avatars0.githubusercontent.com/u/10672914?s=460&v=4',
+            },
+            {
+                title: 'Film #3',
+                description: 'Lorem ipsum 3',
+                image: 'https://avatars0.githubusercontent.com/u/10672914?s=460&v=4',
+            }
+        ];
     }
     MoveListComponent.prototype.ngOnInit = function () {
     };
@@ -539,7 +570,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<app-move-list></app-move-list>"
 
 /***/ }),
 
@@ -630,6 +661,62 @@ var PageMovieListComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], PageMovieListComponent);
     return PageMovieListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/page-notfound/page-notfound.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/pages/page-notfound/page-notfound.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3BhZ2Utbm90Zm91bmQvcGFnZS1ub3Rmb3VuZC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/pages/page-notfound/page-notfound.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/pages/page-notfound/page-notfound.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page-notfound works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/pages/page-notfound/page-notfound.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/pages/page-notfound/page-notfound.component.ts ***!
+  \****************************************************************/
+/*! exports provided: PageNotfoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageNotfoundComponent", function() { return PageNotfoundComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageNotfoundComponent = /** @class */ (function () {
+    function PageNotfoundComponent() {
+    }
+    PageNotfoundComponent.prototype.ngOnInit = function () {
+    };
+    PageNotfoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-notfound',
+            template: __webpack_require__(/*! ./page-notfound.component.html */ "./src/app/pages/page-notfound/page-notfound.component.html"),
+            styles: [__webpack_require__(/*! ./page-notfound.component.css */ "./src/app/pages/page-notfound/page-notfound.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageNotfoundComponent);
+    return PageNotfoundComponent;
 }());
 
 

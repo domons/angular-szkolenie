@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageMovieListComponent } from './pages/page-movie-list/page-movie-list.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
+import { PageNotfoundComponent } from './pages/page-notfound/page-notfound.component';
 
 export const routes: Routes = [
     {
@@ -16,5 +17,9 @@ export const routes: Routes = [
     {
       path: 'contact',
       component: PageContactComponent
+    },
+    {
+      path: '**',
+      component: PageNotfoundComponent
     }
 ];

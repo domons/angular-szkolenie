@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-user-login',
@@ -12,13 +14,24 @@ export class PageUserLoginComponent implements OnInit {
     password: null
   };
 
-  constructor() { }
+  errorMessage = null;
+
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  handleSubmit() {
-    console.log('test', this.user);
+  async handleSubmit() {
+    try {
+      await this.auth.authenticate(this.user);
+      await this.auth.saveLoggedUser(this.user);
+      this.router.navigate(['/']);
+    } catch (err) {
+      this.errorMessage = 'Niepoprawny email lub hasło';
+    }
   }
 
 }

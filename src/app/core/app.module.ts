@@ -18,6 +18,7 @@ import { MoveListComponent } from './components/move-list/move-list.component';
 import { MoveListItemComponent } from './components/move-list-item/move-list-item.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { VideoPlayerComponent } from './components/video-player/video-player.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,11 @@
+<div 
+  *ngIf="errorMessage">
+  <div class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+</div>
+
+
 <form
   (ngSubmit)="handleSubmit()"
   #loginForm="ngForm" 

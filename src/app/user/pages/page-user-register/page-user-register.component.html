@@ -1,6 +1,14 @@
+<div 
+  *ngIf="isRegistrationSuccess">
+  <div class="alert alert-primary">
+    Zarejestrowano nowe konto!
+  </div>
+</div>
+
 <form
   (ngSubmit)="handleSubmit()"
   [formGroup]="registerForm"
+  *ngIf="!isRegistrationSuccess"
 >
     <div class="form-group">
       <label>Email</label>

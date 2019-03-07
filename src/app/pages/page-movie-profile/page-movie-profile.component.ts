@@ -20,5 +20,4 @@ export class PageMovieProfileComponent implements OnInit {
     const movieId = this.route.snapshot.params.id;
     this.movie = await this.moviesService.fetchMovieById(movieId);
   }
-
 }

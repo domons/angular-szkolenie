@@ -1,7 +1,12 @@
-<nav class="mb-4">
-  <ul class="nav">
+<nav class="mb-4 clearfix">
+  <ul class="float-left nav">
     <li class="nav-item"><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="btn-primary" class="btn btn-default mr-1">Strona główna</a></li>
     <li class="nav-item"><a routerLink="/movies" routerLinkActive="btn-primary" class="btn btn-default mr-1">Filmy</a></li>
     <li class="nav-item"><a routerLink="/contact" routerLinkActive="btn-primary" class="btn btn-default mr-1">Kontakt</a></li>
+  </ul>
+
+  <ul class="float-right nav">
+    <li class="nav-item"><a routerLink="/user/register" class="btn btn-default ml-1">Rejestracja</a></li>
+    <li class="nav-item"><a routerLink="/user/login" class="btn btn-default ml-1">Logowanie</a></li>
   </ul>
 </nav>

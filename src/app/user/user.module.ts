@@ -7,12 +7,13 @@ import { PageUserProfileComponent } from './pages/page-user-profile/page-user-pr
 import { PageUserRegisterComponent } from './pages/page-user-register/page-user-register.component';
 import { PageUserLoginComponent } from './pages/page-user-login/page-user-login.component';
 import { SharedModule } from '../shared/shared.module';
+import { PageUserLogoutComponent } from './pages/page-user-logout/page-user-logout.component';
 
 @NgModule({
   declarations: [
     PageUserProfileComponent, 
     PageUserRegisterComponent, 
-    PageUserLoginComponent
+    PageUserLoginComponent, PageUserLogoutComponent
   ],
   imports: [
     CommonModule,

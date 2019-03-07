@@ -11,6 +11,13 @@ export class AuthService {
     private localStorageService: LocalStorageService
   ) { }
 
+  destroySession(): Promise<Status> {
+    return new Promise((resolve, reject) => {
+      this.localStorageService.remove('logged-user');
+      setTimeout(resolve, 200, {status:'ok'});
+    });
+  }
+
   getLoggedUserName(): Promise<string> {
     return new Promise((resolve, reject) => {
       const loggedUser = this.localStorageService.get('logged-user');

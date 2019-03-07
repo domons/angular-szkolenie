@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
-import { Movie } from 'src/app/interfaces/movie.interface';
+import { Movie } from 'src/app/core/interfaces/movie.interface';
 
 @Component({
   selector: 'app-move-list-item',

@@ -32,7 +32,7 @@ import { VideoPlayerComponent } from './components/video-player/video-player.com
     MenuComponent,
     PageNotfoundComponent,
     PageMovieProfileComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
   ],
   imports: [
     BrowserModule,

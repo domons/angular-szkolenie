@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ThrowStmt } from '@angular/compiler';
 import { MovieList } from '../interfaces/movie-list.interface';
 import { environment } from 'src/environments/environment';
 

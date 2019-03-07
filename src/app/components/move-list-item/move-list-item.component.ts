@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { Movie } from 'src/app/interfaces/movie.interface';
 
 @Component({
   selector: 'app-move-list-item',
@@ -7,11 +10,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MoveListItemComponent implements OnInit {
 
-  @Input() movie = null;
+  @Input() movie: Movie = null;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  redirectMovieProfile() {
+    this.router.navigateByUrl('/movies/' + this.movie.id);
   }
 
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,6 +16,7 @@ import { MoveListComponent } from './components/move-list/move-list.component';
 import { MoveListItemComponent } from './components/move-list-item/move-list-item.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PageNotfoundComponent } from './pages/page-notfound/page-notfound.component';
+import { PageMovieProfileComponent } from './pages/page-movie-profile/page-movie-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import { PageNotfoundComponent } from './pages/page-notfound/page-notfound.compo
     MoveListComponent,
     MoveListItemComponent,
     MenuComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
+    PageMovieProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

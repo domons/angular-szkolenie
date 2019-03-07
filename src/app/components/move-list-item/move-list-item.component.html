@@ -2,5 +2,6 @@
     <img [src]="movie.thumb_url" class="card-img-top" (click)="redirectMovieProfile()">
     <div class="card-body">
       <h5 class="card-title">{{ movie?.title }}</h5>
+      <span class="rate" [style.width]="buildRate()"></span>
     </div>
   </div>

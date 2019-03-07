@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { UserRoutingModule } from './user-routing.module';
 import { PageUserProfileComponent } from './pages/page-user-profile/page-user-profile.component';
@@ -14,7 +15,8 @@ import { PageUserLoginComponent } from './pages/page-user-login/page-user-login.
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
   ]
 })
 export class UserModule { }

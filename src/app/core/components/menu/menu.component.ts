@@ -34,7 +34,7 @@ export class MenuComponent implements OnInit {
     try {
       await this.auth.isLoggedUser();
       this.isLoggedUser = true;
-      this.loggedUserName = await this.auth.getLoggedUserName();
+      this.loggedUserName = await this.auth.getLoggedUser();
     } catch (err) {
       this.isLoggedUser = false;
     }

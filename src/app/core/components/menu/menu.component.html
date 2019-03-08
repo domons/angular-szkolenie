@@ -11,7 +11,7 @@
   </ul>
 
   <ul class="float-right nav" *ngIf="isLoggedUser">
-    <li class="nav-item"><a routerLink="/user/profile" class="btn btn-default ml-1">{{ loggedUserName }}</a></li>
+    <li class="nav-item"><a routerLink="/user/profile" class="btn btn-default ml-1">{{ loggedUserName | userDisplayName }}</a></li>
     <li class="nav-item"><a routerLink="/user/logout" class="btn btn-default ml-1">Wyloguj</a></li>
   </ul>
 </nav>

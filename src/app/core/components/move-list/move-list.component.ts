@@ -4,8 +4,7 @@ import { MovieList } from 'src/app/core/interfaces/movie-list.interface';
 @Component({
   selector: 'app-move-list',
   templateUrl: './move-list.component.html',
-  styleUrls: ['./move-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./move-list.component.css']
 })
 export class MoveListComponent implements OnInit {
 

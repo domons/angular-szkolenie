@@ -41,7 +41,7 @@ describe('PageHomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should display thumb list', fakeAsync(() => {
+  it('should display thumb list', fakeAsync(() => {
     const movie: Movie = {
       "id": "fake-id",
       "title": "fake-title",
@@ -70,11 +70,8 @@ describe('PageHomeComponent', () => {
     // 4. Aktualizacja widoku
     fixture.detectChanges();
 
-    console.log($element);
-
     // 5. Sprawdzenie czy są miniaturki
     const list = $element.querySelectorAll('app-move-list-item');
-
     expect(list.length).toEqual(3);
   }));
 

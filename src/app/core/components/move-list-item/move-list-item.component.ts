@@ -6,8 +6,7 @@ import { Movie } from 'src/app/core/interfaces/movie.interface';
 @Component({
   selector: 'app-move-list-item',
   templateUrl: './move-list-item.component.html',
-  styleUrls: ['./move-list-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./move-list-item.component.css']
 })
 export class MoveListItemComponent implements OnInit {
 
@@ -19,10 +18,8 @@ export class MoveListItemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    setTimeout(() => {
       this.movie.rate = 10;
       this.changeDetector.markForCheck();
-    }, 2000);
   }
 
   redirectMovieProfile() {

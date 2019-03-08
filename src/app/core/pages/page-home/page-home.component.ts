@@ -16,6 +16,11 @@ export class PageHomeComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.movies = await this.moviesService.fetchPromoMovies();
+    console.log('ngOnInit');
+    this.movies = await this.getPromoMovies();
+  }
+
+  async getPromoMovies() {
+    return await this.moviesService.fetchPromoMovies();
   }
 }

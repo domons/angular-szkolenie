@@ -54,7 +54,7 @@ describe('VideoPlayerComponent', () => {
   });
   
   
-  fit('should video playing after click play button', () => {
+  it('should video playing after click play button', () => {
     fixture.detectChanges();
     const spy = spyOn(component, 'play');
     fixture.detectChanges();
@@ -69,7 +69,7 @@ describe('VideoPlayerComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  fit('should video pause after click to pause button', () => {
+  it('should video pause after click to pause button', () => {
     fixture.detectChanges();
     const spy = spyOn(component, 'pause');
  

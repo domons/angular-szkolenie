@@ -15,13 +15,6 @@ export class PageHomeComponent implements OnInit {
     private moviesService: MoviesService
   ) { }
 
-  addNumbers(a, b) {
-    if (typeof a !== 'number' || typeof b !== 'number')
-      return null;
-
-    return a + b;
-  }
-
   async ngOnInit() {
     this.movies = await this.moviesService.fetchPromoMovies();
   }

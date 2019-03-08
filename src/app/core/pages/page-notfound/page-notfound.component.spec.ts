@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageNotfoundComponent } from './page-notfound.component';
+import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PageNotfoundComponent', () => {
   let component: PageNotfoundComponent;
@@ -8,7 +10,13 @@ describe('PageNotfoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageNotfoundComponent ]
+      declarations: [ 
+        PageNotfoundComponent,
+        VideoPlayerComponent
+      ],
+      imports: [
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
   }));

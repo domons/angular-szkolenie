@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PageHomeComponent } from './page-home.component';
+import { MoveListComponent } from '../../components/move-list/move-list.component';
+import { MoveListItemComponent } from '../../components/move-list-item/move-list-item.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageHomeComponent', () => {
   let component: PageHomeComponent;
@@ -8,7 +12,14 @@ describe('PageHomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageHomeComponent ]
+      declarations: [ 
+        PageHomeComponent,
+        MoveListComponent,
+        MoveListItemComponent
+       ],
+       imports: [
+         HttpClientTestingModule
+       ]
     })
     .compileComponents();
   }));
@@ -26,18 +37,6 @@ describe('PageHomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should add simple numbers', () => {
-    expect(component.addNumbers(2, 2)).toEqual(4);
-    expect(component.addNumbers(-2, 2)).toEqual(0);
-    expect(component.addNumbers(2, 22)).toEqual(24);
-    expect(component.addNumbers(0, 0)).toEqual(0);
-
-    expect(component.addNumbers('dominiik', 'barylski')).toEqual(null);
-
-
-
   });
 
 });

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoveListComponent } from './move-list.component';
+import { MoveListItemComponent } from '../move-list-item/move-list-item.component';
 
 describe('MoveListComponent', () => {
   let component: MoveListComponent;
@@ -8,7 +9,11 @@ describe('MoveListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoveListComponent ]
+      declarations: [ 
+        MoveListComponent,
+        MoveListItemComponent
+      ],
+
     })
     .compileComponents();
   }));

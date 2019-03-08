@@ -19,6 +19,8 @@ import { MoveListItemComponent } from './components/move-list-item/move-list-ite
 import { MenuComponent } from './components/menu/menu.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { SharedModule } from '../shared/shared.module';
+import { PageAuthorsComponent } from './pages/page-authors/page-authors.component';
+import { BaseFooterComponent } from './components/base-footer/base-footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { SharedModule } from '../shared/shared.module';
     PageNotfoundComponent,
     PageMovieProfileComponent,
     VideoPlayerComponent,
+    PageAuthorsComponent,
+    BaseFooterComponent,
   ],
   imports: [
     BrowserModule,
